@@ -8,10 +8,10 @@ export const getUpcomingEvents = (): Promise<TMResponse> => {
   return axios
     .get("https://app.ticketmaster.com/discovery/v2/events/", {
       params: {
-        api_key: key,
+        apikey: key,
       },
     })
     .then((response) => {
-      return response.data._embedded.events;
+      return response.data._embedded;
     });
 };
