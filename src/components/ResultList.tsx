@@ -11,7 +11,7 @@ const ResultList = ({events}: Props) => {
 
     return (
         <ul className="ResultList">
-                {events.map((event, name) =>(
+                {events.map((event, index) =>(
                     <Result event={event} key={event.name} />
                 ))}
         </ul>

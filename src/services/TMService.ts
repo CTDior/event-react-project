@@ -12,6 +12,6 @@ export const getUpcomingEvents = (): Promise<TMResponse> => {
       },
     })
     .then((response) => {
-      return response.data._embedded.events;
+      return response.data._embedded;
     });
 };

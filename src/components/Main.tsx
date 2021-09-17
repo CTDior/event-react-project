@@ -4,6 +4,7 @@ import "./Main.css";
 import ResultList from "./ResultList";
 import Event from "../models/Event"
 
+
 const Main = () => {
   const [ events, setEvents ] = useState<Event[]>([]);
 
