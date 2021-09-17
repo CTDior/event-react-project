@@ -1,21 +1,19 @@
 import "./Result.css";
-import Event from "../models/Event"
+import Event from "../models/Event";
 
 interface Props {
-    event: Event
+  event: Event;
 }
 
+const Result = ({ event }: Props) => {
+  let imagesArray = event.images[0].url;
 
-const Result = ({event}: Props) => {
-
-
-
-    return (
-        <li className="Result">
-            <p> {event.name} </p>
-            
-        </li>
-    );
-}
+  return (
+    <li className="Result">
+      <p> {event.name} </p>
+      <img src={imagesArray} alt={event.name} />
+    </li>
+  );
+};
 
 export default Result;
