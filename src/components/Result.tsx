@@ -20,9 +20,10 @@ const Result = ({ event }: Props) => {
       <p>{event.dates.start.localTime}</p>
       <p>{venueName}</p>
       <a href={event.url}>Ticketmaster Link</a>
+      <p>
       <button className="favorite" >Add to Bucket List &hearts;</button>
       <button className="favorite" >Remove from Bucket List</button>
-
+      </p>
 
     </li>
   );
