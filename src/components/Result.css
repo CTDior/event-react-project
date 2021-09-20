@@ -1,0 +1,30 @@
+/** @format */
+
+.Result {
+  width: 100%;
+  list-style: none;
+}
+
+p {
+  color: black;
+}
+img {
+  width: 300px;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 10px 5px 5px rgba(247, 170, 6, 0.76);
+}
+
+a {
+  text-decoration: none;
+  padding: 10px;
+}
+
+.favorite {
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.Result ::marker {
+  text-decoration: none;
+}
