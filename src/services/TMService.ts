@@ -12,6 +12,7 @@ export const getUpcomingEvents = (): Promise<TMResponse> => {
       },
     })
     .then((response) => {
+      console.log("Monday", response);
       return response.data._embedded;
     });
 };
