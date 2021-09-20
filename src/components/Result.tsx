@@ -21,6 +21,7 @@ const Result = ({ event }: Props) => {
       <p>{venueName}</p>
       <a href={event.url}>Ticketmaster Link</a>
       <button className="favorite" >Add to Bucket List &hearts;</button>
+      <button className="favorite" >Remove from Bucket List</button>
 
 
     </li>
