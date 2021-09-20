@@ -10,12 +10,14 @@ const Main = () => {
 
   useEffect(() => {
       getUpcomingEvents().then((response) => {
+        console.log(events);
+        /*console.log(events.dates) */
         return setEvents(response.events);
+        
       })
   }, [])
-  console.log(events)
   return <div className="Main">
-    <ResultList events={events} />
+    <ResultList events={events} dates={[]} />
   </div>;
 };
 
