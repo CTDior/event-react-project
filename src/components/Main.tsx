@@ -10,18 +10,21 @@ import SearchForm from "./SearchForm/SearchForm";
 const Main = () => {
   const [events, setEvents] = useState<Event[]>([]);
   const query = new URLSearchParams(useLocation().search);
-  const keyword = query.get("keyword");
-  const postalCode = parseInt(query.get("postalCode"));
-  const radius = parseInt(query.get("radius"));
-  const venue = query.get("venue");
+  const keyword = query.get("keyword") ?? undefined;
+  const postalCode = parseInt(query.get("postalCode") ?? "");
+  const radius = parseInt(query.get("radius") ?? "");
+  const venue = query.get("venue") ?? "";
+  console.log(keyword);
+  console.log(query);
 
   useEffect(() => {
-    getUpcomingEvents(postalCode, keyword, radius, venue).then((response) => {
-      // console.log(events);
-      /*console.log(events.dates) */
+    getUpcomingEvents(postalCode, radius, keyword, venue).then((response) => {
+      console.log(events);
+
       return setEvents(response.events);
     });
   }, []);
+
   return (
     <div className="Main">
       <Header />
