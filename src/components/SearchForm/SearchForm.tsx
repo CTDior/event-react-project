@@ -23,45 +23,56 @@ const SearchForm = () => {
   };
 
   return (
-    <form className="SearchForm" onSubmit={handleSubmit}>
-      <label htmlFor="zipCode">Zip Code</label>
-      <input
-        type="text"
-        id="zipCode"
-        value={postalCode}
-        onChange={(e) => {
-          setPostalCode(parseInt(e.target.value));
-        }}
-      />
-      <label htmlFor="miles">Miles</label>
-      <input
-        type="number"
-        id="miles"
-        value={radius}
-        onChange={(e) => {
-          setRadius(parseInt(e.target.value));
-        }}
-      />
-      <label htmlFor="keyword">Keyword</label>
-      <input
-        type="text"
-        id="keyword"
-        value={keyword}
-        onChange={(e) => {
-          setKeyword(e.target.value);
-        }}
-      />
-      <label htmlFor="venue">Venue</label>
-      <input
-        type="text"
-        id="venue"
-        value={venue}
-        onChange={(e) => {
-          setVenue(e.target.value);
-        }}
-      />
-      <button>Search</button>
-    </form>
+    <section className="FormContainer">
+      <form className="SearchForm" onSubmit={handleSubmit}>
+        <p>
+          <label htmlFor="zipCode">Zip Code</label>
+          <input
+            type="text"
+            id="zipCode"
+            value={postalCode}
+            onChange={(e) => {
+              setPostalCode(parseInt(e.target.value));
+            }}
+          />
+        </p>
+        <p>
+          <label htmlFor="miles">Miles</label>
+          <input
+            type="number"
+            id="miles"
+            value={radius}
+            onChange={(e) => {
+              setRadius(parseInt(e.target.value));
+            }}
+          />
+        </p>
+        <p>
+          <label htmlFor="keyword">Keyword</label>
+          <input
+            type="text"
+            id="keyword"
+            value={keyword}
+            onChange={(e) => {
+              setKeyword(e.target.value);
+            }}
+          />
+        </p>
+        <p>
+          <label htmlFor="venue">Venue</label>
+          <input
+            type="text"
+            id="venue"
+            value={venue}
+            onChange={(e) => {
+              setVenue(e.target.value);
+            }}
+          />
+        </p>
+
+        <button>Search</button>
+      </form>
+    </section>
   );
 };
 

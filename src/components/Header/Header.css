@@ -1,0 +1,8 @@
+.Header {
+  font-family: "Fjalla One", sans-serif;
+  font-style: italic;
+  border-bottom: 3px solid #ee964b;
+  box-shadow: 0 4px 2px -2px #083d77;
+  background-color: #f95738;
+  color: #ebebd3;
+}
