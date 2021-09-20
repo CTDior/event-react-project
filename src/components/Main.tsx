@@ -28,7 +28,10 @@ const Main = () => {
   return (
     <div className="Main">
       <Header />
-      <SearchForm />
+      <section className="SearchFormContainer">
+        <SearchForm />
+      </section>
+
       <ResultList events={events} dates={[]} />
     </div>
   );
