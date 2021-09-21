@@ -10,14 +10,13 @@ interface Props {
 
 
 const ResultList = ({events, dates}: Props) => {
-    console.log("christian", events);
-    console.log("dog", events);
+   
     
     
     return (
         <ul className="ResultList">
                 {events.map((event, index) =>(
-                    <Result event={event} key={event.name} />
+                    <Result event={event} key={event.url} />
                 ))}
         </ul>
     );

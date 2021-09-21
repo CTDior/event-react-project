@@ -5,7 +5,7 @@ const key = process.env.REACT_APP_TM_KEY || "";
 
 export const getUpcomingEvents = (
   postalCode: number | null,
-  radius?: number,
+  sort?: string,
   keyword?: string,
   venue?: string
 ): Promise<TMResponse> => {
@@ -14,7 +14,7 @@ export const getUpcomingEvents = (
       params: {
         apikey: key,
         postalCode: postalCode,
-        radius: radius,
+        sort: sort,
         unit: "miles",
         keyword: keyword,
         venue: venue,

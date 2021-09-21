@@ -3,19 +3,17 @@ import "./Favorites.css";
 import Event from "../models/Event"
 import { useContext } from "react";
 import FavoritesContext from "../context/FavoritesContext";
+import ResultList from "./ResultList";
 /* import TMService from "../services/TMService" */
 
 const Favorites = () => {
   //const context variable here     
-  const {favorites, removeFavorite} = useContext(FavoritesContext);  
+  const {favorites} = useContext(FavoritesContext);  
   
     return (
-        <ul className="FavoritesList">
-                {favorites.map((event) =>(
-                    <Result event={event} key={event.name} />
-                    // add remove favorite here
-                ))}
-        </ul>
+        <div>
+            <ResultList events={favorites} dates={[]}  />
+        </div>
     );
 }
 
