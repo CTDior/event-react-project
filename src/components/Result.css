@@ -1,8 +1,14 @@
 /** @format */
 
 .Result {
-  width: 100%;
+  width: 80%;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 5px;
 }
 
 p {
@@ -18,6 +24,10 @@ img {
 a {
   text-decoration: none;
   padding: 10px;
+}
+
+.tmlink {
+  color: #083d77;
 }
 
 .favorite {

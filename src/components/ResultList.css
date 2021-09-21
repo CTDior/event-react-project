@@ -2,4 +2,13 @@
 
 li {
   text-decoration: none;
+  border: 2px solid #ee964b;
+}
+
+.ResultList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
