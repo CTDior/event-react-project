@@ -5,9 +5,8 @@ import "./SearchForm.css";
 
 const SearchForm = () => {
   const [postalCode, setPostalCode] = useState("48201");
-  const [radius, setRadius] = useState("10");
+  const [sort, setSort] = useState("relevance,desc");
   const [keyword, setKeyword] = useState<string>("concert");
-  const [venue, setVenue] = useState("Fox");
 
   const history = useHistory();
 
@@ -16,9 +15,7 @@ const SearchForm = () => {
     history.push(
       `/?keyword=${encodeURIComponent(keyword)}&postalCode=${encodeURIComponent(
         postalCode
-      )}&radius=${encodeURIComponent(radius)}&venue=${encodeURIComponent(
-        venue
-      )}`
+      )}&sort=${encodeURIComponent(sort)}`
     );
   };
 
@@ -37,15 +34,17 @@ const SearchForm = () => {
           />
         </p>
         <p>
-          <label htmlFor="miles">Miles</label>
-          <input
-            type="number"
-            id="miles"
-            value={radius}
+          <label htmlFor="sort">Sort By</label>
+          <select
+            id="sort"
+            value={sort}
             onChange={(e) => {
-              setRadius(e.target.value);
+              setSort(e.target.value);
             }}
-          />
+          >
+            <option value="name,asc">Event Name</option>
+            <option value="relevance,desc">Relevance</option>
+          </select>
         </p>
         <p>
           <label htmlFor="keyword">Keyword</label>
@@ -58,17 +57,7 @@ const SearchForm = () => {
             }}
           />
         </p>
-        <p>
-          <label htmlFor="venue">Venue</label>
-          <input
-            type="text"
-            id="venue"
-            value={venue}
-            onChange={(e) => {
-              setVenue(e.target.value);
-            }}
-          />
-        </p>
+
 
         <button>Search</button>
       </form>

@@ -12,18 +12,23 @@ const Main = () => {
   const query = new URLSearchParams(useLocation().search);
   const keyword = query.get("keyword") ?? undefined;
   const postalCode = parseInt(query.get("postalCode") ?? "");
-  const radius = parseInt(query.get("radius") ?? "");
+  const sort = query.get("sort") ?? "";
   const venue = query.get("venue") ?? "";
   console.log(keyword);
   console.log(query);
 
   useEffect(() => {
-    getUpcomingEvents(postalCode, radius, keyword, venue).then((response) => {
-      console.log(events);
+    getUpcomingEvents(postalCode, sort, keyword).then((response) => {
+      
 
-      return setEvents(response.events);
+      if (response === undefined) {
+        setEvents([]);
+      } else {
+        setEvents(response.events);
+        console.log(response.events);
+      }
     });
-  }, [postalCode, radius, keyword, venue]);
+  }, [postalCode, sort, keyword]);
 
   return (
     <div className="Main">

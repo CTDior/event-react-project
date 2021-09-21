@@ -41,7 +41,7 @@ const Result = ({ event }: Props) => {
         <button className="favorite" onClick={()=>removeFavorite(event.url)}>Remove from Bucket List</button>
       }
       </p>
-
+        
     </li>
   );
 };
