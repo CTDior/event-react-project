@@ -20,6 +20,10 @@ input {
   width: 90%;
 }
 
+select {
+  width: 90%;
+}
+
 button {
   background-color: #f95738;
   border-radius: 5%;
