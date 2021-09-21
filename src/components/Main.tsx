@@ -23,16 +23,16 @@ const Main = () => {
 
       return setEvents(response.events);
     });
-  }, []);
+  }, [postalCode, radius, keyword, venue]);
 
   return (
     <div className="Main">
-      <Header />
+  
       <section className="SearchFormContainer">
         <SearchForm />
       </section>
 
-      <ResultList events={events} dates={[]} />
+      <ResultList events={events} dates={[]}  />
     </div>
   );
 };

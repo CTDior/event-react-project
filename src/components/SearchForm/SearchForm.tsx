@@ -4,8 +4,8 @@ import { getUpcomingEvents } from "../../services/TMService";
 import "./SearchForm.css";
 
 const SearchForm = () => {
-  const [postalCode, setPostalCode] = useState(48201);
-  const [radius, setRadius] = useState(10);
+  const [postalCode, setPostalCode] = useState("48201");
+  const [radius, setRadius] = useState("10");
   const [keyword, setKeyword] = useState<string>("concert");
   const [venue, setVenue] = useState("Fox");
 
@@ -32,7 +32,7 @@ const SearchForm = () => {
             id="zipCode"
             value={postalCode}
             onChange={(e) => {
-              setPostalCode(parseInt(e.target.value));
+              setPostalCode(e.target.value);
             }}
           />
         </p>
@@ -43,7 +43,7 @@ const SearchForm = () => {
             id="miles"
             value={radius}
             onChange={(e) => {
-              setRadius(parseInt(e.target.value));
+              setRadius(e.target.value);
             }}
           />
         </p>

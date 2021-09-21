@@ -1,5 +1,7 @@
 import "./Result.css";
 import Event from "../models/Event";
+import FavoritesContext from "../context/FavoritesContext";
+import { useContext } from "react";
 
 interface Props {
   event: Event;
@@ -12,6 +14,17 @@ const Result = ({ event }: Props) => {
   // regular time.
   let day = ""
   
+  const {favorites, addFavorite, removeFavorite} = useContext(FavoritesContext); // this gets the add favorite function from context
+ 
+  const isFav = (url: string): boolean => {
+    return favorites.some( (event) => {
+      return event.url === url;
+    })
+  }
+
+
+
+
   return (
     <li className="Result">
       <p> {event.name} </p>
@@ -21,8 +34,12 @@ const Result = ({ event }: Props) => {
       <p>{venueName}</p>
       <a href={event.url}>Ticketmaster Link</a>
       <p>
-      <button className="favorite" >Add to Bucket List &hearts;</button>
-      <button className="favorite" >Remove from Bucket List</button>
+      {isFav(event.url) === false &&
+        <button className="favorite" onClick={()=>addFavorite(event)} >Add to Bucket List &hearts;</button>
+        }
+      {isFav(event.url) &&
+        <button className="favorite" onClick={()=>removeFavorite(event.url)}>Remove from Bucket List</button>
+      }
       </p>
 
     </li>
